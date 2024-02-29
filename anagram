@@ -1,0 +1,24 @@
+//a function said first and second str are with same alphabets
+//anagram('hi','hii')=>false
+//anagram('hi','ih')=>true
+
+function anagram(str1,str2){
+    let counterStr1={}
+    let counterStr2={}
+    
+    for (let i of str1){
+        counterStr1[i]=(counterStr1[i] || 0)+1
+    }
+    for (let i of str2){
+        counterStr2[i]=(counterStr2[i] || 0)+1
+    }
+
+    if(str1.length===str2.length)
+
+    for(let key in counterStr1){
+        if(key in counterStr2 &&counterStr2[key]===counterStr1[key])
+  return true
+            }
+return false
+}
+anagram('ozro', 'zoro')
