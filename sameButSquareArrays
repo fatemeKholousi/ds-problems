@@ -1,0 +1,44 @@
+// a func get 2 array 
+// same([1,2,3,4],[1,4,9,16]) => true
+// same([1,2,3,4],[9,4,9,16]) => false
+function same(a,b){
+    let result=false
+    const counterA={}
+    const counterB={}
+    
+
+    for(i of a){
+       if(counterA.hasOwnProperty(j)){
+                 counterA[i]+=1
+            }
+        else{
+             counterA[i]=1
+            
+        }    }
+
+    
+    for(j of b){
+        if(counterB.hasOwnProperty(j)){
+             counterB[j]+=1
+            
+        }
+        else{
+             counterB[j]=1
+        }
+    }
+
+    for (const key in counterA) {
+     if(key**2 in counterB && counterA[key]===counterB[key**2]){
+         
+     return true
+     }
+        else{
+            return false
+        }
+     
+        }
+   
+}
+
+const res=same([1,2,3,4],[9,4,9,16])
+console.log(res)
